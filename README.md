@@ -280,7 +280,7 @@ O resultado do Vigia C (alerta regional) é usado como uma informação de entra
 2. O **ESP32** (com sensores HX711 e MPU6050) captura, de forma contínua, os dados de consumo de comida, consumo de água e nível de movimento do animal, transmitindo-os via **Thinger.io**.
 3. O **backend/API** consome tanto os dados inseridos manualmente (cadastro, histórico clínico) quanto os dados vindos do Thinger.io (leituras de sensor), persistindo tudo no **banco de dados Oracle**.
 4. Os **componentes de IA** (Vigias A, B e C) consultam o banco de dados, tanto as tabelas operacionais (animal, sensor, consulta) quanto as tabelas de referência (peso ideal, predisposições, catálogo de doenças). Executam as correlações descritas na Seção 6, e gravam os alertas resultantes na tabela `T_CLYVO_ALERTA`.
-5. Os **alertas gerados** retornam à aplicação e são exibidos ao responsável (via app) e à clínica (via painel), fechando o ciclo entre monitoramento contínuo e ação concreta.
+5. Os **alertas gerados** retornam à aplicação e são enviados ao responsável (via WhatsApp) e exibidos à clínica/veterinário (via painel/app), fechando o ciclo entre monitoramento contínuo e ação concreta.
 
 ---
 
@@ -294,7 +294,7 @@ O resultado do Vigia C (alerta regional) é usado como uma informação de entra
 2. **Aplicação:** o backend consome os dados do Thinger.io e os grava no banco Oracle, além de gerenciar todo o cadastro (perfil, histórico clínico) via API.
 3. **Dados:** o banco Oracle centraliza tanto os dados operacionais (sensores, cadastro) quanto os dados de referência (peso ideal, predisposições, catálogo de doenças) que alimentam os modelos.
 4. **Inteligência Artificial:** os três vigias (A já existente, B e C novos) consomem os dados do banco, executam as correlações detalhadas na Seção 6, e gravam seus resultados em `T_CLYVO_ALERTA`.
-5. **Apresentação:** os alertas gerados chegam ao responsável (via app) e à clínica (via painel), fechando o ciclo entre monitoramento e ação.
+5. **Apresentação:** os alertas gerados chegam ao responsável (via WhatsApp) e à clínica/veterinário (via painel/app), fechando o ciclo entre monitoramento e ação.
 
 ---
 
