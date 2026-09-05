@@ -3,6 +3,12 @@
 > Sistema de gestão veterinária centralizada para acompanhamento contínuo da 
 > saúde de animais, utilizando IoT, IoB & Generative IA
 
+[![Assista ao Pitch do Projeto](https://youtube.com)](https://www.youtube.com/watch?v=mwg3Do74-24)
+[Clique aqui para assistir ao vídeo do Pitch no YouTube](https://www.youtube.com/watch?v=mwg3Do74-24)
+
+
+---
+
 ## Sumário
 
 1. [Visão geral](#1-visão-geral)
@@ -89,7 +95,7 @@ Responsáveis de animais frequentemente não percebem mudanças graduais na saú
 - **Falta de referência técnica.** O responsável não sabe o que é "normal" para a espécie, raça, idade e peso do seu animal. Um consumo de água que parece baixo pode ser perfeitamente normal para aquele perfil, e vice-versa.
 - **Falta de consultas rotineiras.** Sem sintomas visíveis, é comum que o acompanhamento veterinário preventivo seja adiado, reduzindo a chance de detecção precoce.
 
-Além do problema individual, existe um problema maior ainda: **não existe hoje uma forma rápida de identificar quando uma doença está se espalhando numa região**, mesmo quando várias clínicas parceiras já estão vendo casos parecidos. Cada clínica enxerga apenas os próprios pacientes, sem visibilidade agregada. E se depender de dados epidemiológicos fornecidos por prefeituras ou governo, na prática eles costumam ser bem demorados, o que impede uma ação rápida.
+Além do problema individual, existe um problema maior ainda: **não existe hoje uma forma rápida de identificar quando uma doença está se espalhando numa região**, mesmo quando várias clínicas parceiras já estão vendo casos parecidos. Cada clínica enxerga apenas os próprios pacientes, sem visibilidade agregada. E se depender de dados epidemiológicos fornecidos por prefeituras ou governo, na prática eles costumam ser bem demorados, o que impede uma ação rápida. Quando esses boletins existem, a ideia é que eles sirvam como reforço e confirmação do alerta que a Clyvo já gerou antes, não como a única fonte de informação.
 
 ### 2.2 O que já existe, e o que essa fase completa
 
@@ -109,6 +115,8 @@ O que essa fase adiciona é justamente isso: fazer o sistema **entender** os dad
 | **Responsável** | Recebe alertas antecipados e personalizados, sem precisar interpretar dados técnicos. O sistema traduz o sinal em algo rápido e de fácil entendimento, como "considere agendar uma consulta" ou "risco de obesidade identificado" |
 | **Clínica/Veterinário** | Ganha visibilidade sobre pacientes que precisam de atenção antes de chegarem em estado grave, e passa a receber alertas agregados de vigilância epidemiológica regional, possibilitando ação preventiva em vez de puramente reativa |
 | **Animal** | Tem problemas potencialmente identificados mais cedo, quando o tratamento tende a ser mais simples, menos invasivo e mais barato. Recebe um cuidado mais adequado ao seu perfil individual, não um padrão genérico aplicado a todos os animais |
+
+---
 
 ## 3. Abordagem de IA escolhida e justificativa técnica
 
@@ -356,3 +364,6 @@ Essa mesma diferença vale, por extensão, para os Vigias B e C: a lógica de co
 3. **Geração do dataset de treino:** um script em Python vai consultar as tabelas de referência do banco (`T_CLYVO_REF_PESO_RACA`, `T_CLYVO_PREDISP_ESPECIE`, `T_CLYVO_PREDISP_RACA`) e gerar um conjunto de dados simulado, no qual cada linha representa um animal fictício com peso, raça, idade, consumo e movimento, já rotulado com o nível de risco esperado. É esse conjunto de dados que o modelo vai usar pra aprender os padrões.
 4. **Treinamento dos modelos:** o mesmo script (ou um script separado) vai treinar o modelo do Vigia B (classificação, usando Árvore de Decisão ou Random Forest, que aprende a associar o perfil e os sinais do animal ao nível de risco) e o modelo do Vigia C (detecção de padrões fora do esperado, que aprende qual é o número normal de casos de uma doença numa região e sinaliza quando foge muito disso). Os dois modelos treinados ficam salvos para uso posterior.
 5. **Geração de alertas:** os modelos treinados vão consumir os dados reais do banco (leituras de sensor, cadastro, consultas) e aplicar as 14 correlações explicadas na Seção 6, uma por uma, pra decidir o nível de risco de cada animal e de cada região. O resultado final é gravado na tabela `T_CLYVO_ALERTA`.
+
+
+
