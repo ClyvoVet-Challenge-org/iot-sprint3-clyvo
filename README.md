@@ -3,8 +3,11 @@
 > Sistema de gestão veterinária centralizada para acompanhamento contínuo da 
 > saúde de animais, utilizando IoT, IoB & Generative IA
 
-[![Assista ao Pitch do Projeto](https://youtube.com)](https://www.youtube.com/watch?v=mwg3Do74-24)
-[Clique aqui para assistir ao vídeo do Pitch no YouTube](https://www.youtube.com/watch?v=mwg3Do74-24)
+## Pitch do Projeto
+
+[![Assista ao Pitch do Projeto](https://img.youtube.com/vi/mwg3Do74-24/0.jpg)](https://www.youtube.com/watch?v=mwg3Do74-24)
+
+[Assistir ao Pitch no YouTube](https://www.youtube.com/watch?v=mwg3Do74-24)
 
 
 ---
