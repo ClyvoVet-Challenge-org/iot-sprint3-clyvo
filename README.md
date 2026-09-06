@@ -25,6 +25,7 @@
 9. [Tecnologias utilizadas](#9-tecnologias-utilizadas)
 10. [Status de implementação e resultados parciais](#10-status-de-implementação-e-resultados-parciais)
 11. [Instruções de uso](#11-instruções-de-uso)
+12. [Equipe](#12-equipe)
 
 ---
 
@@ -368,5 +369,14 @@ Essa mesma diferença vale, por extensão, para os Vigias B e C: a lógica de co
 4. **Treinamento dos modelos:** o mesmo script (ou um script separado) vai treinar o modelo do Vigia B (classificação, usando Árvore de Decisão ou Random Forest, que aprende a associar o perfil e os sinais do animal ao nível de risco) e o modelo do Vigia C (detecção de padrões fora do esperado, que aprende qual é o número normal de casos de uma doença numa região e sinaliza quando foge muito disso). Os dois modelos treinados ficam salvos para uso posterior.
 5. **Geração de alertas:** os modelos treinados vão consumir os dados reais do banco (leituras de sensor, cadastro, consultas) e aplicar as 14 correlações explicadas na Seção 6, uma por uma, pra decidir o nível de risco de cada animal e de cada região. O resultado final é gravado na tabela `T_CLYVO_ALERTA`.
 
+---
 
+## 12. Equipe
+
+| RM | Nome | Turma |
+|---|---|---|
+| RM561713 | Eduardo Batista Locaspi | 2TDSPI |
+| RM565799 | Leticia Santiago e Silva | 2TDSPW |
+| RM565698 | Liana Lyumi Morisita Fujisima | 2TDSPI |
+| RM561833 | Victor Alves Lopes | 2TDSPI |
 
